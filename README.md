@@ -18,7 +18,7 @@ npm run build
 npm run build --report
 ```
 
-###  Vue.js高仿饿了么外卖App
+###  Vue.js Demo
 * 项目使用Vue2.0和vue-cli构建
 * 使用stylus 模块化编译css
 * 使用vue-router开发单页应用
