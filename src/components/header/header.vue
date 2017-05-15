@@ -18,7 +18,7 @@
         </div>
       </div>
       <div v-if="seller.supports" class="support-count" @click="showDetail">
-        <span class="count">{{seller.supports.length}}个</span>
+        <span class="count" @click="show=!show">{{seller.supports.length}}个</span>
         <i class="icon-keyboard_arrow_right"></i>
       </div>
     </div>
@@ -29,7 +29,8 @@
     <div class="background">
       <img :src="seller.avatar" width="100%" height="100%">
     </div>
-    <div v-show="detailShow" class="detail">
+    <transition name="fade">
+    <div v-show="detailShow" class="detail" transition="fade">
       <div class="detail-wrapper clearfix">
         <div class="detail-main">
         <h1 class="name">{{seller.name}}</h1>
@@ -58,9 +59,10 @@
         </div>
       </div>
       <div class="detail-close">
-      <i class="icon-close">X</i>
+      <i class="icon-close" @click="hideDetail">X</i>
       </div>
     </div>
+  </transition>
   </div>
 </template>
 
@@ -80,6 +82,9 @@
     methods: {
       showDetail() {
         this.detailShow = true
+      },
+      hideDetail() {
+        this.detailShow = false
       }
     },
     created() {
@@ -204,6 +209,14 @@
     height: 100%
     overflow: auto
     background: rgba(7,17,27,.8)
+    transition: all 0.5s
+    backdrop-filter: blur(10px)
+    &.fade-transition
+      opacity: 1
+      background: rgba(7,17,27,.8)
+    &.fade-enter, &fade-leave
+      opacity: 0
+      backgroung: rgba(7,17,27,0)
     .detail-wrapper
       min-height: 90%
       width: 100%
@@ -259,6 +272,13 @@
                 bg-image('invoice_1')
               &.special
                 bg-image('special_1')
+        .bulletion
+          width: 80%
+          margin: 0 auto
+          .content
+            padding: 0 12px
+            line-height: 24px
+            font-size: 12px
     .detail-close
       position: relative
       width: 32px
