@@ -15,6 +15,7 @@ Vue.use(VueResource)
 
 var router = new VueRouter({
   routes: [
+    { path: '/', redirect: 'goods' },
     { path: '/goods', name: 'goods', component: Goods },
     { path: '/ratings', name: 'ratings', component: Ratings },
     { path: '/seller', name: 'seller', component: Seller }

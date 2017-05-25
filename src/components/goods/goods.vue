@@ -42,7 +42,7 @@
 </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script type="text/ecmascript-6" scope>
   import BScroll from 'better-scroll'
   import shopcart from 'component/shopcart/shopcart.vue'
   import cartcontrol from 'component/cartcontrol/cartcontrol.vue'

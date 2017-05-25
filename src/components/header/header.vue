@@ -18,7 +18,7 @@
         </div>
       </div>
       <div v-if="seller.supports" class="support-count" @click="showDetail">
-        <span class="count" @click="show=!show">{{seller.supports.length}}个</span>
+        <span class="count">{{seller.supports.length}}个</span>
         <i class="icon-keyboard_arrow_right"></i>
       </div>
     </div>
@@ -37,7 +37,7 @@
         <div class="star-warpper">
           <star :size="48" :score="seller.score"></star>
         </div>
-        <div class="title">
+        <div class="titleB">
           <div class="line"></div>
           <div class="text">优惠信息</div>
           <div class="line"></div>
@@ -45,10 +45,10 @@
          <ul v-if="seller.supports" class="supports">
           <li class="support-item" v-for="item in seller.supports" :key="item.id">
             <span class="icon" :class="classMap[item.type]"></span>
-            <span class="text">{{item.description}}</span>
+            <span class="text1" style="font-size:10px;line-height:12px;">{{item.description}}</span>
           </li>
         </ul>
-        <div class="title">
+        <div class="titleB">
           <div class="line"></div>
           <div class="text">商家公告</div>
           <div class="line"></div>
@@ -153,9 +153,9 @@
         bg-image('invoice_1')
       &.special
         bg-image('special_1')
-    .text
+    .text1
       line-height: 12px
-      font-size: 10px
+      font-size: 20px
   .support-count
     position: absolute
     right: 12px
@@ -232,7 +232,7 @@
           margin-top: 18px
           padding: 2px 0
           text-align: center
-        .title
+        .titleB
           display: flex
           width: 80%
           margin: 28px auto 24px auto
