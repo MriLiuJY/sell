@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="detail-close">
-      <i class="icon-close" @click="hideDetail">X</i>
+      <i class="icon-close" @click="hideDetail"></i>
       </div>
     </div>
   </transition>
@@ -154,8 +154,8 @@
       &.special
         bg-image('special_1')
     .text1
-      line-height: 12px
-      font-size: 20px
+      line-height: 16px
+      font-size: 16px
   .support-count
     position: absolute
     right: 12px
@@ -171,6 +171,8 @@
       vertical-align: top
     .icon-keyboard_arrow_right
       font-size: 10px
+      display:inline-block
+      margin-top: 6px
   .bulletin-wrapper
     height: 28px
     line-height: 28px

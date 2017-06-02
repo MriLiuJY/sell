@@ -38,7 +38,7 @@
       </li>
     </ul>
   </div>
-  <shopcart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
+  <shopcart ref="shopcart" :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
 </div>
 </template>
 
@@ -115,10 +115,12 @@
           click: true,
           probeType: 3
         })
-
         this.foodsScroll.on('scroll', (pos) => {
           this.scrollY = Math.abs(Math.round(pos.y))
         })
+      },
+      _drop(target) {
+        this.$refs.shopcart.drop(target)
       },
       _calculateHeight() {
         let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
@@ -134,6 +136,11 @@
     components: {
       shopcart,
       cartcontrol
+    },
+    events: {
+      'cart.add'(target) {
+        this._drop(target)
+      }
     }
   }
 </script>
