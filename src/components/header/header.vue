@@ -108,7 +108,7 @@
     font-size:0
     position: relative
   .avatar
-    display:inline-block
+    display: inline-block
     vertical-align: top
     img
       border-radius: 2px

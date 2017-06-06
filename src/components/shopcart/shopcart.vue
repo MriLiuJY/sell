@@ -255,6 +255,5 @@
 	          height:16px
 	          border-radius:50%
 	          background: rgb(0,160,220)
-	          transition: all 0.4s
-
+	          transition: all 0.4s linear
 </style>
