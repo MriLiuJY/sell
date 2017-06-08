@@ -156,7 +156,7 @@
     }
   }
 </script>
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" rel="stylesheet/stylus" scope>
     @import "../../common/stylus/mixin.styl"
 
     .goods
