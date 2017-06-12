@@ -5,6 +5,7 @@ import App from './App'
 // import router from './router'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import Vuex from 'vuex'
 import Goods from './components/goods/goods'
 import Ratings from './components/ratings/ratings'
 import Seller from './components/seller/seller'
@@ -13,6 +14,7 @@ Vue.config.productionTip = false
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
+Vue.use(Vuex)
 
 var router = new VueRouter({
   routes: [
